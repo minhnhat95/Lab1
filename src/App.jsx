@@ -130,9 +130,10 @@ function App() {
 
   // Load tasks from local storage on app startup
   useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart"));
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     console.log("storedCart", storedCart);
-    setCart(storedCart || []);
+
+    setCart(storedCart);
   }, []);
 
   const handleSearchProduct = () => {
