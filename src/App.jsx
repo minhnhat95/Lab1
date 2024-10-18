@@ -132,7 +132,7 @@ function App() {
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart"));
     console.log("storedCart", storedCart);
-    setCart(storedCart);
+    setCart(storedCart || []);
   }, []);
 
   const handleSearchProduct = () => {
